@@ -1,0 +1,99 @@
+import java.util.*;
+
+public class ListADT {
+    private int[] data;
+    private int size;
+    private int capacity;
+
+    public ListADT(int capacity) {
+        this.capacity = capacity;
+        data = new int[capacity];
+        size = 0;
+    }
+
+    public void insert(int pos, int element) {
+        if (size == capacity) {
+            System.out.println("Full!!!!!!!");
+            return;
+        }
+        if (pos < 0 || pos > size) {
+            System.out.println("Invalid position!!!");
+            return;
+        }
+        for (int i = size - 1; i >= pos; i--) {
+            data[i + 1] = data[i];
+        }
+        data[pos] = element;
+        size++;
+    }
+
+    public void delete(int pos) {
+        if (isempty()) {
+            System.out.println("List is empty!!!");
+            return;
+        }
+        if (pos < 0 || pos >= size) {
+            System.out.println("Invalid position !!!");
+            return;
+        }
+        for (int i = pos; i < size - 1; i++) {
+            data[i] = data[i + 1];
+        }
+        size--;
+    }
+
+    public int get(int pos) {
+        if (pos < 0 || pos >= size) {
+            System.out.println("Invalid position!!!");
+            return -1;
+        }
+        return data[pos];
+    }
+
+    public void update(int pos, int element) {
+        if (pos < 0 || pos >= size) {
+            System.out.println("Invalid position!!!");
+            return;
+        }
+        data[pos] = element;
+    }
+
+    public boolean isempty() {
+        return size == 0;
+    }
+
+    public void display() {
+        if (isempty()) {
+            System.out.println("List is empty!!!!!!!!!");
+        } else {
+            System.out.println("List is:");
+            for (int i = 0; i < size; i++) {
+                System.out.println(data[i]);
+            }
+            System.out.println();
+        }
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        ListADT ladt = new ListADT(10);
+
+        ladt.insert(0, 15);
+        ladt.insert(1, 20);
+        ladt.insert(2, 30);
+        ladt.insert(3, 40);
+
+        ladt.display();
+
+        System.out.println("*********** After Update ***********");
+        ladt.update(2, 35);
+        ladt.display();
+
+        System.out.println("*********** After Deletion ***********");
+        ladt.delete(1);
+        ladt.display();
+
+        System.out.println("The element at position 0 is: " + ladt.get(0));
+    }
+}   
+
