@@ -1,0 +1,67 @@
+import java.util.*;
+import java.util.*;
+public class TwoDimentionalArray{
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter number of rows");
+        int rows = sc.nextInt();
+        
+        System.out.println("enter the numbers of columns:");
+        int cols = sc.nextInt();
+        
+        int[][] twod = new int[rows][cols];//2d array creation
+        
+        System.out.println("*************Eneter the values in the array**********");
+        
+        for(int i=0;i<rows;i++)//rows
+        {
+            for(int j=0;j<cols;j++)//colums
+            {
+                twod[i][j] = sc.nextInt(); //twod[0][0] towd[0][1] twod[0][2] twod[0][3]|insert values in the array
+                
+            }
+        }
+        System.out.println("************Value in the array************");
+        
+        for(int i=0; i<rows;i++)
+        {
+            for(int j=0;j<cols;j++)
+            {
+                System.out.print(twod[i][j]+"\t");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+public class TwoDimentionalArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number of rows:");
+        int rows = sc.nextInt();
+
+        System.out.println("Enter number of columns:");
+        int cols = sc.nextInt();
+
+        int[][] twod = new int[rows][cols]; // 2D array creation
+
+        System.out.println("************* Enter the values in the array *************");
+
+        for (int i = 0; i < rows; i++) { // Corrected condition
+            for (int j = 0; j < cols; j++) {
+                twod[i][j] = sc.nextInt(); // Insert values in the array
+            }
+        }
+
+        System.out.println("************ Values in the array ************");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(twod[i][j] + "\t"); // Corrected to tab spacing
+            }
+            System.out.println(); // Move to next line after each row
+        }
+    }
+}
