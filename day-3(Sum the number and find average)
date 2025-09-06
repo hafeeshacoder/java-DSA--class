@@ -1,0 +1,25 @@
+import java.util.*;
+    public class ArrayImplementation
+    {
+        public static void main(String[] args){
+            Scanner scan =new Scanner(System.in);
+            System.out.println("enter the size;");
+            int size = scan.nextInt();
+            int[] a1=new int[size];
+            System.out.println("enter the array elements:");
+            for (int i=0;i<size;i++)
+            {
+                a1[i]=scan.nextInt();
+            }
+            int sum =0;
+            for (int i=0;i<size;i++)
+            {
+                sum+=a1[i];
+            }
+        float average = (float) sum / size;
+        System.out.println("Sum="+sum);
+        System.out.println("Average="+average);
+            
+            
+            
+        }
