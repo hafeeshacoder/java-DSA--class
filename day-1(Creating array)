@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class  ArrayImplementation
+{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);//scanner object cration
+        System.out.println("enter the size:");//output statement
+        int size =s.nextInt(); //to get the
+        user input
+        int[] array1 = new int[size];//array declaration
+        System.out.println("enter" +size+"numbers:");
+        for (int i=0; i<size; i++)
+        {
+            array1[i] = s.nextInt();//to insert the element in an array 
+        }
+        System.out.println("Array elements are:");
+        for (int i=0; i<size; i++)
+        {
+           System.out.println("At" +i+ "="+array1[i]);
+        }
+    }
